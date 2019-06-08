@@ -6,16 +6,13 @@ const port = 3000
 app.set('view engine', 'ejs')
 
 // Directory and callback function
-app.get('/', (req, res) => 
-  res.render(''))
+app.get('/', (req, res) =>
+  res.render('home/index'))
 
-app.get('/tecnologia', (req, res) => 
-  res.render('secao/tecnologia'))
+app.get('/formulario_inclusao_noticia', (req, res) =>
+  res.render('admin/form_add_noticia'))
 
-app.get('/moda', (req, res) => 
-  res.render('secao/moda'))
-
-app.get('/beleza', (req, res) => 
-  res.render('secao/beleza'))
+app.get('/noticias', (req, res) =>
+  res.render('noticias/noticias'))
 
 app.listen(port, () => console.log(`server listening on port ${port}!`))
