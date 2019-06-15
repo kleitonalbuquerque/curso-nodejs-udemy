@@ -1,18 +1,14 @@
-const express = require('express')
-const app = express()
-const port = 3000
+var app = require('./config/server')
 
-// Generate views
-app.set('view engine', 'ejs')
+var home = require('./app/routes/home')(app)
 
-// Directory and callback function
-app.get('/', (req, res) =>
-  res.render('home/index'))
+var rotaNoticias = require('./app/routes/noticias')(app)
 
-app.get('/formulario_inclusao_noticia', (req, res) =>
-  res.render('admin/form_add_noticia'))
+var formAddNoticias = require('./app/routes/formulario_inclusao_noticia')(app)
 
-app.get('/noticias', (req, res) =>
-  res.render('noticias/noticias'))
+var port = 3000
 
-app.listen(port, () => console.log(`server listening on port ${port}!`))
+app.listen(port, () => {
+  console.log(`server listening on port ${port}!`)
+  }
+)
