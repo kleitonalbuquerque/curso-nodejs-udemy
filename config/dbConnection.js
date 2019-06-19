@@ -1,7 +1,6 @@
 var mysql = require('mysql')
 
 var connMySQL = () => {
-  console.log('Conexão com DB foi estabelecida.')
   return mysql.createConnection({
     host: 'localhost',
     user: 'root',
@@ -11,6 +10,5 @@ var connMySQL = () => {
 }
 
 module.exports = () => {
-  console.log('O autoload carregou o módulo de conexão com DB.')
   return connMySQL
 }
